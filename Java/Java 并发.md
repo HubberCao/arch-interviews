@@ -3,9 +3,9 @@
 ### 线程之间是如何通信的
 
 1.通过线程之间共享变量的方式
-		(1) synchronized + Object的 wait(),notify(),以及notifyAll() 
-		(2) 使用lock.newCondition().await() 和 signal() 方法实现线程之间交互 
-		(3) 利用volatile
+(1) synchronized + Object的 wait(),notify(),以及notifyAll() 
+(2) 使用lock.newCondition().await() 和 signal() 方法实现线程之间交互 
+(3) 利用volatile
 2. 通过队列(BlockingQueue)来实现线程的通信
 
 		用java.util.concurrent包中linkedBlockingQueue 来进行线程间交互； 
