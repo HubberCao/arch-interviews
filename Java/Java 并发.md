@@ -121,6 +121,22 @@ linux常用的进程间的通讯方式
 操作系统中可能会出现某条线程常常获取到VPU控制权的情况，为了让某些优先级比较低的线程也能获取到CPU控制权，可以使用Thread.sleep(0)手动触发一次操作系统分配时间片的操作，这也是平衡CPU控制权的一种操作。
 ```
 
+### 同步方法和同步块
+
+参考
+- [JAVA中线程同步的方法（7种）汇总](https://cloud.tencent.com/developer/article/1095920)
+
+### 如何控制某个方法允许并发访问线程的个数
+```
+1. semaphore
+2. 阻塞队列
+3. Hystrix
+4. RateLimiter
+...
+```
+参考
+- [Java中如何限制方法访问的并发数](https://blog.csdn.net/manzhizhen/article/details/81413014)
+
 ## ReentrantLock
 
 ### 是如何实现可重入性的？
