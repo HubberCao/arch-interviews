@@ -113,6 +113,14 @@ linux常用的进程间的通讯方式
 - [避免使用线程组](https://blog.csdn.net/Deaht_Huimie/article/details/85013810)
 - [Thread及ThreadGroup杂谈](https://www.cnblogs.com/yiwangzhibujian/p/6212104.html)
 
+### Java中用到的线程调度算法
+
+```
+抢占式。一个线程用完CPU之后，操作系统会根据线程优先级、线程饥饿情况等数据算出一个总的优先级并分配下一个时间片给某个线程执行。
+
+操作系统中可能会出现某条线程常常获取到VPU控制权的情况，为了让某些优先级比较低的线程也能获取到CPU控制权，可以使用Thread.sleep(0)手动触发一次操作系统分配时间片的操作，这也是平衡CPU控制权的一种操作。
+```
+
 ## ReentrantLock
 
 ### 是如何实现可重入性的？
