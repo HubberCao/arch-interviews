@@ -1,19 +1,19 @@
 ## 线程
 
 ### 线程之间是如何通信的
-
+```
 1.通过线程之间共享变量的方式
 (1) synchronized + Object的 wait(),notify(),以及notifyAll() 
 (2) 使用lock.newCondition().await() 和 signal() 方法实现线程之间交互 
 (3) 利用volatile
 2. 通过队列(BlockingQueue)来实现线程的通信
 
-		用java.util.concurrent包中linkedBlockingQueue 来进行线程间交互； 
-		java.util.concurrent.LinkedBlockingQueue 是一个基于单向链表的、范围任意的（其实是有界的）、FIFO 阻塞队列。
-		访问与移除操作是在队头进行，添加操作是在队尾进行，并分别使用不同的锁进行保护，只有在可能涉及多个节点的操作才同时对两个锁进行加锁。
+用java.util.concurrent包中linkedBlockingQueue 来进行线程间交互； 
+java.util.concurrent.LinkedBlockingQueue 是一个基于单向链表的、范围任意的（其实是有界的）、FIFO 阻塞队列。
+访问与移除操作是在队头进行，添加操作是在队尾进行，并分别使用不同的锁进行保护，只有在可能涉及多个节点的操作才同时对两个锁进行加锁。
+
 3. 套接字（Socket），不同的机器之间进行通信
 
-```
 java线程间通信：
 
 1：线程上下文
