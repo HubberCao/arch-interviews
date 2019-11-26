@@ -148,3 +148,10 @@ JVM将记下锁的持有者,并且将获取计数值置为1,如果同一个线�
 ```
 - [可重入锁ReentrantLock详解](https://www.iteye.com/blog/donald-draper-2360411)
 - [Java可重入锁学习笔记](https://www.shiyanlou.com/questions/2460/)
+
+### 原理
+
+参考
+- [Lock原理分析](https://blog.csdn.net/u011212394/article/details/82314489)
+- [Lock的实现原理](https://www.cnblogs.com/shoshana-kong/p/10772679.html)
+- [Lock实现原理](https://www.cnblogs.com/shoshana-kong/p/10772608.html)
