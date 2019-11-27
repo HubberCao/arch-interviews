@@ -97,8 +97,14 @@
 	kafka：一个topic，一个partition，一个consumer，内部多线程，这不也明显乱了
 　　
 	如何来保证消息的顺序性呢？
-	rabbitmq：拆分多个queue，每个queue一个consumer，就是多一些queue而已，确实是麻烦点；或者就一个queue但是对应一个consumer，然后这个consumer内部用内存队列做排队，然后分发给底层不同的worker来处理。
-	kafka：一个topic，一个partition，一个consumer，内部单线程消费，写N个内存queue，然后N个线程分别消费一个内存queue即可。	
+	rabbitmq：
+		拆分多个queue，每个queue一个consumer，就是多一些queue而已，确实是麻烦点；
+		或者就一个queue但是对应一个consumer，然后这个consumer内部用内存队列做排队，然后分发给底层不同的worker来处理。
+	kafka：
+		一个topic，一个partition，一个consumer，内部单线程消费，单线程吞吐量太低，一般不会用这个。
+		写N个内存queue，具有相同key的数据都到同一个内存queue；然后对于N个线程，每个线程分别消费一个内存queue即可，这样就能保证顺序性。
+
+https://www.cnblogs.com/mengchunchen/p/10020997.html
 
 三、消息重复
 
